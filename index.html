@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 페이지 분할기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF 페이지 분할기</h1>
+        <p>PDF 파일을 업로드하여 각 페이지를 개별 이미지로 다운로드하세요</p>
+        
+        <div class="upload-area">
+            <input type="file" id="pdfFile" accept=".pdf" style="display: none;">
+            <label for="pdfFile" class="upload-label">
+                <div class="upload-content">
+                    <span class="upload-icon">📄</span>
+                    <span class="upload-text">PDF 파일을 선택하거나 드래그하여 놓으세요</span>
+                </div>
+            </label>
+        </div>
+        
+        <div id="progress" class="progress" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">처리 중...</div>
+        </div>
+        
+        <div id="results" class="results" style="display: none;">
+            <h2>변환된 페이지들</h2>
+            <div class="download-all">
+                <button id="downloadAllBtn" class="btn btn-primary">모든 페이지 다운로드</button>
+            </div>
+            <div id="pageContainer" class="page-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
